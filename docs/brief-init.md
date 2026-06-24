@@ -1,0 +1,5 @@
+[3:30 pm, 22/06/2026] Oatsy: Sweet as. I need someone to build a local LLM / OCR thing that can turn emails into structured and prioritised data real quick. Can be a bit meh, but I can create you some psuedo data to learn from and you can use AI to generate a pipeline / package we can deploy and run on real data
+[4:51 pm, 22/06/2026] Nathan: Sure, what email provide gmail / outlook and whats the stack? azure / agent run in container
+[4:56 pm, 22/06/2026] Nathan: Pull emails > llm > json with email classification / priority > .html frontend. Vailidate, Make it smart with historical data
+[6:07 pm, 22/06/2026] Oatsy: I don't even think you will need to get the email pull working. I can probably just setup an API that accepts a JSON and we can shoot requests to it
+[6:08 pm, 22/06/2026] Oatsy: Then I can connect it up with PowerAutomate to save LLM requiring access to email server (which will probably have issues)

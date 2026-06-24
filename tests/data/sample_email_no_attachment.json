@@ -1,0 +1,15 @@
+{
+  "id": "AAMk674cc5f5ca5e45ee9553ad07cf3bb19f",
+  "internetMessageId": "<0e28e7f753814ba4884ee35c22ab30bb@contoso.com>",
+  "conversationId": "c4a0dbd3823d419ea1edeca7ff465ab5",
+  "subject": "FYI + please renew the parking permit by 30 June",
+  "from": "alice@acme-fitouts.com",
+  "to": "sam.ea@oatsy.com",
+  "cc": "",
+  "importance": "Normal",
+  "hasAttachments": false,
+  "receivedDateTime": "2026-06-24T00:54:06Z",
+  "bodyPreview": "<html> <body>\n <p>Hi Sam, </p>\n <p>Couple of bits: </p>\n <ul>\n   <li>FYI &mdash; the new office plants were delivered this morning, all good, nothing needed from you. </li>\n   <li>The building  <b>parking permit expires 30 June </b>. Can you renew it befo",
+  "body": "<html><body>\n<p>Hi Sam,</p>\n<p>Couple of bits:</p>\n<ul>\n  <li>FYI &mdash; the new office plants were delivered this morning, all good, nothing needed from you.</li>\n  <li>The building <b>parking permit expires 30 June</b>. Can you renew it before then? We can't afford to lose the two bays.</li>\n  <li>No rush, but sometime this month it'd be good to tidy the shared stationery cupboard.</li>\n</ul>\n<p>Cheers,<br>Alice</p>\n</body></html>\n",
+  "attachments": []
+}

@@ -1,0 +1,8 @@
+{
+  "description": "Body-only path: extract a real task and keep FYI content low priority.",
+  "min_tasks": 1,
+  "overall_priority_in": ["low", "medium", "fyi"],
+  "summaries_include": ["parking permit", "30 June"],
+  "priorities_include": ["fyi"],
+  "due_dates_include": ["2026-06-30"]
+}

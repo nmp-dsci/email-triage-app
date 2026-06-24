@@ -1,0 +1,9 @@
+{
+  "description": "PDF attachment path: invoice payment plus follow-up scheduling.",
+  "min_tasks": 2,
+  "overall_priority_in": ["high", "urgent"],
+  "priorities_include": ["high"],
+  "summaries_include": ["invoice", "layout"],
+  "due_dates_include": ["2026-07-15"],
+  "attachment_names_include": ["invoice-INV-2045.pdf"]
+}

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="360" viewBox="0 0 980 360" role="img" aria-labelledby="title desc">
+  <title id="title">Email triage solution flow</title>
+  <desc id="desc">Outlook email flows through Power Automate, FastAPI, attachment conversion, triage agent, storage, tracing, and structured task output.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#146c5f" />
+    </marker>
+  </defs>
+  <rect width="980" height="360" fill="#f8fafc"/>
+  <g font-family="Inter, Arial, sans-serif" font-size="18" fill="#17202a">
+    <g transform="translate(32 88)">
+      <rect width="150" height="86" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="75" y="38" text-anchor="middle" font-weight="700">Outlook</text>
+      <text x="75" y="62" text-anchor="middle" font-size="13" fill="#64748b">Email + files</text>
+    </g>
+    <g transform="translate(232 88)">
+      <rect width="170" height="86" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="85" y="36" text-anchor="middle" font-weight="700">Power Automate</text>
+      <text x="85" y="62" text-anchor="middle" font-size="13" fill="#64748b">POST /triage</text>
+    </g>
+    <g transform="translate(452 52)">
+      <rect width="210" height="158" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="105" y="34" text-anchor="middle" font-weight="700">FastAPI Service</text>
+      <text x="105" y="66" text-anchor="middle" font-size="13" fill="#64748b">Validate payload</text>
+      <text x="105" y="90" text-anchor="middle" font-size="13" fill="#64748b">Save run bundle</text>
+      <text x="105" y="114" text-anchor="middle" font-size="13" fill="#64748b">Convert attachments</text>
+      <text x="105" y="138" text-anchor="middle" font-size="13" fill="#64748b">Run triage agent</text>
+    </g>
+    <g transform="translate(722 34)">
+      <rect width="208" height="72" rx="8" fill="#e3f4ef" stroke="#9bc7bd"/>
+      <text x="104" y="31" text-anchor="middle" font-weight="700">Structured Tasks</text>
+      <text x="104" y="53" text-anchor="middle" font-size="13" fill="#37675f">JSON response</text>
+    </g>
+    <g transform="translate(722 144)">
+      <rect width="208" height="72" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="104" y="31" text-anchor="middle" font-weight="700">Runs Storage</text>
+      <text x="104" y="53" text-anchor="middle" font-size="13" fill="#64748b">request, md, llm</text>
+    </g>
+    <g transform="translate(722 254)">
+      <rect width="208" height="72" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="104" y="31" text-anchor="middle" font-weight="700">Dashboard</text>
+      <text x="104" y="53" text-anchor="middle" font-size="13" fill="#64748b">evals.json review</text>
+    </g>
+  </g>
+  <g stroke="#146c5f" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M182 131 H226"/>
+    <path d="M402 131 H446"/>
+    <path d="M662 104 C690 80 694 70 716 70"/>
+    <path d="M662 150 C690 174 694 180 716 180"/>
+    <path d="M826 216 V248"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "description": "Spreadsheet attachment path: review May expenses and approve lines over $500.",
+  "min_tasks": 1,
+  "overall_priority_in": ["medium", "high"],
+  "summaries_include": ["expenses", "approve", "$500"],
+  "due_dates_include": ["Thursday"],
+  "attachment_names_include": ["may-expenses.xlsx"]
+}

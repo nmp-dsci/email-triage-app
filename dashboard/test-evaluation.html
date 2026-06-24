@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Email Triage Evaluation</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-title">Email Triage</div>
+          <div class="brand-subtitle">Evaluation runs</div>
+        </div>
+        <button class="case-button active" data-case-id="methodology">
+          <span class="case-status neutral"></span>
+          <span>
+            <strong>Methodology</strong>
+            <small>Pipeline, config, deployment</small>
+          </span>
+        </button>
+        <div id="case-list" class="case-list"></div>
+      </aside>
+      <section id="view" class="view" aria-live="polite"></section>
+    </main>
+    <script src="assets/evals-data.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

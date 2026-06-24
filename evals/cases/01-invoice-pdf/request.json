@@ -1,0 +1,25 @@
+{
+  "id": "AAMk596af063ab0746d69420db693dabbc3c",
+  "internetMessageId": "<c5a64d131da34d64bb74713b5a483f55@contoso.com>",
+  "conversationId": "85e97a971daf418da1cdde8e85f81755",
+  "subject": "Q3 fit-out: pay deposit invoice + book layout call",
+  "from": "alice@acme-fitouts.com",
+  "to": "sam.ea@oatsy.com",
+  "cc": "",
+  "importance": "High",
+  "hasAttachments": true,
+  "receivedDateTime": "2026-06-24T00:50:40Z",
+  "bodyPreview": "<html> <body>\n <p>Hi Sam, </p>\n <p>Two things before end of week: </p>\n <ol>\n   <li>Please review and  <b>pay the attached deposit invoice </b> (INV-2045, $4,200) by  <b>15 July </b> so ACME can lock in our install slot. </li>\n   <li>Can you also  <b>book",
+  "body": "<html><body>\n<p>Hi Sam,</p>\n<p>Two things before end of week:</p>\n<ol>\n  <li>Please review and <b>pay the attached deposit invoice</b> (INV-2045, $4,200) by <b>15 July</b> so ACME can lock in our install slot.</li>\n  <li>Can you also <b>book a 30-min call</b> with their project lead next week to confirm the boardroom layout? Anytime Tue/Wed works for me.</li>\n</ol>\n<p>This is fairly urgent &mdash; the slot is only held until Friday.</p>\n<p>Thanks,<br>Alice</p>\n</body></html>\n",
+  "attachments": [
+    {
+      "@odata.type": "#Microsoft.OutlookServices.FileAttachment",
+      "id": "e976041ba3b0478f8da2928fd222722d",
+      "name": "invoice-INV-2045.pdf",
+      "contentType": "application/pdf",
+      "size": 1001,
+      "isInline": false,
+      "contentBytes": "JVBERi0xLjQKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCA2MTIgNzkyXSAvUmVzb3VyY2VzIDw8IC9Gb250IDw8IC9GMSA1IDAgUiA+PiA+PiAvQ29udGVudHMgNCAwIFIgPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA0NTcgPj4Kc3RyZWFtCkJUIC9GMSAxMiBUZiA3MiA3NDAgVGQgMTYgVEwKKEFDTUUgT2ZmaWNlIEZpdC1PdXRzIEx0ZCAgICAgICAgICAgIElOVk9JQ0UpIFRqClQqICgpIFRqClQqIChJbnZvaWNlIG5vOiAgSU5WLTIwNDUpIFRqClQqIChCaWxsIHRvOiAgICAgT2F0c3kgUHR5IEx0ZCkgVGoKVCogKElzc3VlIGRhdGU6ICAyMDI2LTA2LTIwKSBUagpUKiAoRHVlIGRhdGU6ICAgIDIwMjYtMDctMTUpIFRqClQqICgpIFRqClQqIChEZXNjcmlwdGlvbiAgICAgICAgICAgICAgICAgICAgICAgICBBbW91bnQpIFRqClQqIChRMyBib2FyZHJvb20gZml0LW91dCBcKGRlcG9zaXRcKSAgICAgICQ0LDIwMC4wMCBBVUQpIFRqClQqICgpIFRqClQqIChUb3RhbCBkdWU6ICAgJDQsMjAwLjAwIEFVRCkgVGoKVCogKFBsZWFzZSByZW1pdCBwYXltZW50IGJ5IHRoZSBkdWUgZGF0ZSBhbmQgY29uZmlybSB0aGUgaW5zdGFsbCBkYXRlLikgVGoKRVQKZW5kc3RyZWFtCmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9Gb250IC9TdWJ0eXBlIC9UeXBlMSAvQmFzZUZvbnQgL0hlbHZldGljYSA+PgplbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAwNTggMDAwMDAgbiAKMDAwMDAwMDExNSAwMDAwMCBuIAowMDAwMDAwMjQxIDAwMDAwIG4gCjAwMDAwMDA3NDkgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSA2IC9Sb290IDEgMCBSID4+CnN0YXJ0eHJlZgo4MTkKJSVFT0Y="
+    }
+  ]
+}
