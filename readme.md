@@ -1,5 +1,30 @@
 # Email Triage App
 
+## View The Demo Dashboard
+
+The fastest way to review the working demo is the static evaluation dashboard:
+
+```sh
+python3 -m http.server 8080 --directory dashboard
+```
+
+Then open:
+
+```text
+http://localhost:8080/test-evaluation.html
+```
+
+The dashboard shows the methodology plus three eval email conversations with
+request, structured output, checks, and trace/interim artifacts. It works
+without the API running because the latest eval output is embedded in
+`dashboard/assets/evals-data.js`.
+
+To regenerate the static demo data before viewing:
+
+```sh
+make eval-static
+```
+
 Dockerised FastAPI service for receiving Outlook email payloads from Power
 Automate, extracting structured prioritised tasks, and saving each request's
 artifacts under `runs/` for review and evaluation.
