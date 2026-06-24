@@ -114,12 +114,14 @@ function renderCase(item) {
       <div class="checks">${(item.checks ?? []).map(checkTemplate).join("")}</div>
     </section>
     <section class="section band">
-      <h2>Output</h2>
-      ${(output.tasks ?? []).map(taskTemplate).join("")}
-      <p>${escapeHtml(output.reasoning ?? "")}</p>
+      <h2>Request</h2>
+      ${requestTemplate(item.request ?? {})}
+      <details class="raw-json"><summary>Raw Power Automate JSON</summary><pre>${escapeHtml(JSON.stringify(item.request, null, 2))}</pre></details>
     </section>
-    <section class="section">
-      <details open><summary>Request</summary><pre>${escapeHtml(JSON.stringify(item.request, null, 2))}</pre></details>
+    <section class="section band">
+      <h2>Output</h2>
+      ${tasksTableTemplate(output.tasks ?? [])}
+      <p class="reasoning">${escapeHtml(output.reasoning ?? "")}</p>
     </section>
     <section class="section">
       <details open><summary>Trace / Interim Steps</summary>${traceTemplate(item.trace ?? [])}</details>
@@ -132,17 +134,78 @@ function vocabBlock(title, items = []) {
     .join("")}</div>`;
 }
 
-function taskTemplate(task) {
-  return `<div class="task">
-    <div class="chips">
-      <span class="chip">#${escapeHtml(task.task_id)}</span>
-      <span class="chip">${escapeHtml(task.category)}</span>
-      <span class="chip">${escapeHtml(task.priority)}</span>
-      <span class="chip">${escapeHtml(task.source)}</span>
-      ${task.due_date ? `<span class="chip">${escapeHtml(task.due_date)}</span>` : ""}
+function requestTemplate(request) {
+  const attachments = Array.isArray(request.attachments) ? request.attachments : [];
+  const body = htmlToText(request.body || request.bodyPreview || "");
+  return `<article class="email-preview">
+    <header class="email-header">
+      <div>
+        <span>From</span>
+        <strong>${escapeHtml(request.from ?? request.sender ?? "")}</strong>
+      </div>
+      <div>
+        <span>To</span>
+        <strong>${escapeHtml(request.to ?? "")}</strong>
+      </div>
+      <div>
+        <span>Importance</span>
+        <strong>${escapeHtml(request.importance ?? "")}</strong>
+      </div>
+      <div>
+        <span>Received</span>
+        <strong>${escapeHtml(request.receivedDateTime ?? "")}</strong>
+      </div>
+    </header>
+    <div class="email-subject">${escapeHtml(request.subject ?? "")}</div>
+    <div class="email-body">${escapeHtml(body)}</div>
+    <div class="attachment-row">
+      <span>Attachments</span>
+      ${
+        attachments.length
+          ? attachments.map((attachment) => attachmentTemplate(attachment)).join("")
+          : '<strong class="muted-text">None</strong>'
+      }
     </div>
-    <p>${escapeHtml(task.summary)}</p>
+  </article>`;
+}
+
+function attachmentTemplate(attachment) {
+  const size = attachment.size ? `${Math.round(Number(attachment.size) / 1024)} KB` : "";
+  return `<strong>${escapeHtml(attachment.name ?? "")}${size ? ` · ${escapeHtml(size)}` : ""}</strong>`;
+}
+
+function tasksTableTemplate(tasks) {
+  if (!tasks.length) {
+    return `<p class="lede">No structured tasks were returned.</p>`;
+  }
+  return `<div class="table-wrap">
+    <table class="tasks-table">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Category</th>
+          <th>Urgency</th>
+          <th>Due</th>
+          <th>Source</th>
+          <th>Confidence</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${tasks.map(taskRowTemplate).join("")}
+      </tbody>
+    </table>
   </div>`;
+}
+
+function taskRowTemplate(task) {
+  return `<tr>
+    <td><strong>#${escapeHtml(task.task_id)}</strong> ${escapeHtml(task.summary)}</td>
+    <td>${escapeHtml(task.category)}</td>
+    <td><span class="priority priority-${escapeAttr(task.priority)}">${escapeHtml(task.priority)}</span></td>
+    <td>${escapeHtml(task.due_date ?? "-")}</td>
+    <td>${escapeHtml(task.source ?? "-")}</td>
+    <td>${task.confidence == null ? "-" : `${Math.round(Number(task.confidence) * 100)}%`}</td>
+  </tr>`;
 }
 
 function checkTemplate(check) {
@@ -170,4 +233,31 @@ function escapeHtml(value) {
 
 function escapeAttr(value) {
   return escapeHtml(value);
+}
+
+function htmlToText(value) {
+  const withoutTags = String(value ?? "")
+    .replace(/<br\s*\/?\s*>/gi, "\n")
+    .replace(/<\/p>/gi, "\n\n")
+    .replace(/<\/li>/gi, "\n")
+    .replace(/<[^>]+>/g, " ");
+  return decodeEntities(withoutTags)
+    .replace(/[ \t]+/g, " ")
+    .replace(/\n\s+/g, "\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function decodeEntities(value) {
+  const entities = {
+    amp: "&",
+    lt: "<",
+    gt: ">",
+    quot: '"',
+    apos: "'",
+    nbsp: " ",
+    mdash: "-",
+    ndash: "-",
+  };
+  return value.replace(/&([a-z]+);/gi, (_, entity) => entities[entity.toLowerCase()] ?? _);
 }
