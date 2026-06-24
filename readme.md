@@ -31,6 +31,10 @@ To regenerate the static demo data before viewing:
 make eval-static
 ```
 
+## Solution Flow
+
+![Email triage solution flow](dashboard/methodology/solution-diagram.svg)
+
 Dockerised FastAPI service for receiving Outlook email payloads from Power
 Automate, extracting structured prioritised tasks, and saving each request's
 artifacts under `runs/` for review and evaluation.
