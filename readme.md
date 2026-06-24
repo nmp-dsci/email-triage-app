@@ -4,6 +4,17 @@
 
 The fastest way to review the working demo is the static evaluation dashboard:
 
+```text
+dashboard/test-evaluation.html
+```
+
+Open that file directly in a browser. It shows the methodology plus three eval
+email conversations with request, structured output, checks, and trace/interim
+artifacts. It works without the API running because the latest eval output is
+embedded in `dashboard/assets/evals-data.js`.
+
+If your browser blocks local file loading, serve the static folder instead:
+
 ```sh
 python3 -m http.server 8080 --directory dashboard
 ```
@@ -13,11 +24,6 @@ Then open:
 ```text
 http://localhost:8080/test-evaluation.html
 ```
-
-The dashboard shows the methodology plus three eval email conversations with
-request, structured output, checks, and trace/interim artifacts. It works
-without the API running because the latest eval output is embedded in
-`dashboard/assets/evals-data.js`.
 
 To regenerate the static demo data before viewing:
 
